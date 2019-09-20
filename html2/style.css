@@ -5,7 +5,6 @@ body{
 }
 
 .wrapper{
-    box-sizing: border-box;  
     display: block;
     left: 0;
     position: relative;
@@ -306,7 +305,7 @@ nav a{
     }
     .box-new{
         width:100%;
-        padding-left: 80px;
+
     }
     .box-img-new-1{
         width:50%;
