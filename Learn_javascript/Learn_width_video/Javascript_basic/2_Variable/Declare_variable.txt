@@ -1,0 +1,8 @@
+var a = 1;
+
+- Keyword       : var
+- Variable name : add
+- Value         : a
+- Assign        : =
+
+- Declare A variable a, assign value 1 to variable a

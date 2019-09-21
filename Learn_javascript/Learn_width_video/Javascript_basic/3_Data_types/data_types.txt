@@ -1,0 +1,12 @@
+Data types:
+
+- Primitive types:
+    + Number
+    + String
+    + Boolean
+
+- Special types:
+    + underfined
+    + null
+
+
