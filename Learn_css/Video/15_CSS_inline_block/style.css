@@ -1,0 +1,9 @@
+/*width match_parent*/
+.block{
+    display: block;
+}
+
+/*width wrap_content*/
+.inline{
+    display: inline;
+}

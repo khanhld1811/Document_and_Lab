@@ -1,0 +1,20 @@
+.list-item{
+    color:blue;
+    font-weight:bold;
+    margin-bottom:8px;
+    padding:16px;
+    border-left-width: 10px;
+    border-width: 1px;
+    border-style:solid;
+    border-color:#49C598;
+    border-radius: 4px;
+    background-color:#DDD;
+}
+
+.list-item-transparent{
+    /* background-color: transparent;  */
+
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,112,9,1) 0%, rgba(23,159,112,1) 50%, rgba(255,0,0,1) 100%);
+    color:white;
+}

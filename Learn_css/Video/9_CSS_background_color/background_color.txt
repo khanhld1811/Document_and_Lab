@@ -1,0 +1,5 @@
+background-color: color;
+background-color:transparent;
+background-color:gradient;
+
+// website css gradient generator -> https://cssgradient.io/

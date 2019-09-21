@@ -1,0 +1,11 @@
+/* .list-1 > .item{
+    border:1px solid #333; 
+} */
+
+/* .list-1 .item-2 + .item{
+    border:1px solid #333;
+} */
+
+.list-2 .item-1 ~ .item{
+    border:1px solid #333;
+}

@@ -1,0 +1,42 @@
+.default-link{
+    color:blue;
+}
+
+/*never click*/
+.default-link:link{
+    color:blue;
+    text-decoration: none;
+    font-family: serif;
+}
+
+/*clicked*/
+.default-link:visited{
+    color:blue;
+}
+
+/*mouse cursor*/
+.default-link:hover{
+    text-decoration:underline;
+}
+
+/*hold click*/
+.default-link:active{
+    color:red;
+}
+
+.button-link{
+    background-color:gray;
+    text-decoration: none;
+    color:#FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:6px 23px;
+}
+
+.button-link:hover{
+    background-color: #d40b0b;
+}
+
+.button-link:active{
+    background-color: #690ac9;
+}
+}
