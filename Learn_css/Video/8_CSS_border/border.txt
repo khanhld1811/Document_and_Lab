@@ -1,0 +1,13 @@
+Syntax
+- border-width: 1px;
+- border-style: solid | dotted | dashed | ...
+- border-color: red
+Shorthand:
+- border-width: top right bottom left
+- border-width: top left-right bottom
+- border-width: top-bottom left-right
+
+- border-top-width: 1px
+- border-right-width:1px
+
+- border-radius:;

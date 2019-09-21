@@ -1,0 +1,9 @@
+Syntaxes
+- margin-top
+- margin-right
+- margin-left
+- margin-bottom
+- margin: top right bottom left;
+- margin: top left-right bottom;
+- margin: top-bottom left-right;
+- margin: all;

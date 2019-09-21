@@ -1,0 +1,9 @@
+Syntaxtes
+- padding-top:
+- padding-right
+- padding-left
+- padding-bottom
+- padding: top right bottom left;
+- padding: top left-right bottom;
+- padding: top-bottom left-right;
+- padding: all;
