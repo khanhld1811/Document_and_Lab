@@ -1,0 +1,26 @@
+.album-square{
+    width:120px;
+    height:120px;
+    background-color:#DDD;
+    background-image: url('https://1.bp.blogspot.com/-JoX7RgZtHfc/Ww0Kj099EkI/AAAAAAAAABo/pWpNRS1OnWcYy_y_-YUBTBb0T1-ucg2qACLcBGAs/s640/meo_de_thuong_khong_ma_nhin.jpg');
+    background-size:cover;
+    background-position: center;
+    font-family: serif;
+    color:#FFF;
+    font-size:55px;
+}
+
+.album-square .overlay{
+    height:100%;
+    background-color:rgba(0,0,0,0.6);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    opacity: 0;
+    /* visibility: hidden; */
+    /* display: none; */
+}
+
+.album-square:hover .overlay{
+    opacity: 1;
+}
