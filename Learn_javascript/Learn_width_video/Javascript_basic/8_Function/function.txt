@@ -1,0 +1,15 @@
+Function: perform a job or a certain task
+
+Define a function
+
+    function doSomething(input1, input2,...){
+        //code
+        return something;
+    }
+
+    Keywords:function, return
+    Function name: doSomething
+    Parameter names: input1, input2
+
+Execute / Call  a function
+    doSomething(input1, input2,...);
