@@ -1,0 +1,24 @@
+.container{
+    width:300px;
+    height:300px;
+    background-color:#DDD;
+    position: relative;
+}
+
+.inner-container{
+    width:200px;
+    height:200px;
+    background-color:#888;
+    
+}
+
+.child{
+    width:100px;
+    height:100px;
+    background-color:#0f517f;
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    margin-top:-50px;
+    margin-left:-50px;
+}

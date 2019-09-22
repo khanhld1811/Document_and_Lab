@@ -1,0 +1,25 @@
+
+.box{
+    width:100px;
+    height:100px;
+    color:white;
+}
+
+.red{
+    background-color:red;
+}
+
+.green{
+    background-color:green;
+}
+
+.blue{
+    background-color:blue;
+}
+
+.fixed{
+    /* Di chuyển tương đối so với cửa sổ trình duyệt*/
+    position:fixed;
+    right:10px;
+    top:10px;
+}
