@@ -8,3 +8,6 @@
     baseline | stretch*
 
 - flex-basic: <length>;
+- flex-grow: <number>; // Space allocation for components
+- flex-shrink: 1* | <number> // Caculation formula (https://stackoverflow.com/questions/36550840/how-to-calculate-flex-shrink-when-flex-items-have-a-different-flex-basis)
+- oder: 0* | <number>

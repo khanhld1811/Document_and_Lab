@@ -1,3 +1,7 @@
+body{
+    margin:0;
+}
+
 .container{
     display: flex;
     flex-direction: row;
@@ -9,15 +13,25 @@
 
 .child-1{
     background-color:red;
-    flex-basis: 120px;
+    flex-basis: 500px;
+    flex-grow: 1;
 }
 
 .child-2{
     background-color:green;
-    flex-basis: 200px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    /* flex-shrink: 0; */
+    
 }
 
 .child-3{
     background-color:blue;
-    flex-basis:150px;
+    flex-basis:200px;
+    flex-grow: 1;
+}
+
+.container-swap .child-1{
+    display: flex;
+    order:1;
 }
