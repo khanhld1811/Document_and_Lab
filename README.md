@@ -4,4 +4,8 @@
 * CSS
 * JS
 * Git
+* Agile
+* SQL
+* Java
+* Android
  
