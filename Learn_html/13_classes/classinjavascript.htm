@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Using The class Attribute in JavaScript</h2>
+    <p> Clock the button, to hide all elements with the class name "city", with JavaScript:</p>
+
+    <button onclick="myFunction()">Hide elements</button>
+
+    <h2 class="city">London</h2>
+    <p>Paris is the capital</p>
+
+    <h2 class="city">Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+
+    <script >
+        function myFunction(){
+            var x = document.getElementsByClassName("city");
+            for(var i = 0; i < x.length;i++){
+                x[i].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
