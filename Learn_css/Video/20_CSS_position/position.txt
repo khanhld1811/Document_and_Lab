@@ -1,6 +1,0 @@
-positon: static* | relative | absolute |
-
-+ top 
-+ bottom
-+ left
-+ right
