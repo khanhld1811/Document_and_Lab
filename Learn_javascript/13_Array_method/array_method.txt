@@ -1,0 +1,11 @@
+webpage: arraymethod.
+Các method của 1 arraymethod
+
++ a.concat(b)
++ a.push(b)
++ a.pop()
++ a.shift()
++ a.shift
++ a.unshift
++ a.slice
++ a.splice
