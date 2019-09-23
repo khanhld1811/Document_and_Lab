@@ -1,0 +1,9 @@
+Syntax
+    for(init; condition; final-expression){
+        statements;
+    }
+
+    Keywords:for:
+    init: khởi tạo giá trị.
+    condition: điều kiện (true or false)
+    final-expression: thay đổi giá trị khởi tạo mỗi lần lặp
