@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For_of and For_in</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        body li{
+            list-style-type:none;
+            border-bottom:1px solid #DDD;
+        }
+    </style>
+</head>
+<body>
+    <ul id="contact-list">
+    </ul>
+    <script>
+            var employees = [
+            {name:'John', age:20},
+            {name:'Tomat', age:25},
+            {name:'Jerry', age:22}
+         ];
+
+         var content = '';
+
+         for(var employee of employees){
+             content += '<li>' + employee.name + '</li>'
+         }
+
+         document.getElementById('contact-list').innerHTML = content;
+
+         //content += '<li>John</li>'
+         //content += '<li>Tomat</li>'
+         //content += '<li>Jerry</li>'
+         //content = '<li>John</li><li>Tomat</li><li>Jerry</li>'
+    </script>
+</body>
+</html>

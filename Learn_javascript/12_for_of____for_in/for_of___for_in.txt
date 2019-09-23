@@ -1,0 +1,4 @@
+Other For loops
+
+1. for ... of // Lặp qua các phân tử trong mảng
+2. for ... in // Lặp qua các key trong 1 object
