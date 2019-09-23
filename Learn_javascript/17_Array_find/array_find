@@ -1,0 +1,8 @@
+Syntax
+
+arr.find(function(item){
+    //transform
+    return newValue;// true or false
+});
+
+Method name: find
