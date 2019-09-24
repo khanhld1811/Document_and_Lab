@@ -1,0 +1,8 @@
+Syntax
+
+arr.reduce(function(item1,item2){
+    //calculation
+    return x;
+},init);
+
+Method name: reduce.
