@@ -1,0 +1,10 @@
+syntax: 
+    array.sort(funtion(a, b){ })
+
+    if sort function
+        return a value < 0
+            a will come before before
+        return a value > 0
+            a will come after before
+        return 0 
+            a and b will stay unchanged
