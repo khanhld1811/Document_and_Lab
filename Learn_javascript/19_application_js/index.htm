@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS apply into reality </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col form-group">
+            <label for="genderFilter">Gender</label>
+            <select id="genderFilter" class="form-control">
+                <option value="null">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
+
+    <ul class="list-group" id="userList">
+        <!-- <li class="list-group-item">Tom</li>
+        <li class="list-group-item">Maria</li>
+        <li class="list-group-item">Jason</li>
+        <li class="list-group-item">Tomat</li>
+        <li class="list-group-item">Trumb</li> -->
+    </ul>
+
+    <script>
+        var users = [
+            {name:"Tom",gender:'male'},
+            {name:"Maria",gender:'male'},
+            {name:"Jason",gender:'female'},
+            {name:"Sora",gender:'female'},
+            {name:"Trumb",gender:'male'},
+        ];
+        
+        var userList = $('#userList');
+        var genderFilter = $('#genderFilter');
+
+        render(userList,users);
+
+        genderFilter.on('change',function(){
+            var selectedGender = this.value;
+        });
+
+        function render(container, items){
+            var htmItems = items.map(function(item){
+                return '<li class="list-group-item">' + item.name + '</li>';
+            });
+
+            //gop chuoi
+        var html = htmItems.join();
+
+
+        container.html(html);
+        };
+
+        
+    </script>
+</body>
+
+</html>
