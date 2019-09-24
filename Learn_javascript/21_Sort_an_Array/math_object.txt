@@ -1,0 +1,9 @@
+//Math object in javascript
+//Math.PI
+//Math.ceil(number) //ceilling 
+//Math.floor(number)
+//Math.round(number)
+//Math.max(x1, x2, ...)
+//Math.min(x1, x2, ...)
+//Math.random()
+//Google keyword: Mozilla math object
