@@ -10,9 +10,15 @@ squareNumbers;
 //bai tap
 
 var rectangles = [
-    {width:10, height:5},
-    {width:10, height:20},
-    {width:5, height:15}
-];
-
+    {width:10, height: 5},
+    {width:5, height: 25},
+    {width:4, height: 9},
+  ];
+  
+  var x = rectangles.map(function acreageRectangles(obj){
+      return obj.width * obj.height;
+  });
+  
+  console.log(x);
+  
 
