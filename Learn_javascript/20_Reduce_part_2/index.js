@@ -20,6 +20,14 @@ var products = [
   console.log(total);
   
   
-  var items = ['Tom','Bill','Kim'];
+  var items = ['Tom','Bill','Kim','khanh','hoang'];
   //use reduce to make this result
   // '<Tom><Bill><Kim>'
+
+  function itemName(item){
+    return item.reduce(function(x,y){
+      return    x + '<' + y + '>'; 
+    },"");
+  };
+
+  itemName(items);

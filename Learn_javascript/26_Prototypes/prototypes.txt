@@ -1,0 +1,24 @@
+Constructor function
+    - Being used with new in order to create new objects
+    - Function name is a Noun with first character uppercased
+
+    function Mouse(){
+        this.name = "khanh";
+    }
+    var mikey = new Mosue();
+
+
+
+    Normal function
+    - Being called to perform some specific task
+    - Function name is a verb following camlCase convention
+
+    function sayHello(){
+        console.log('Hello');
+    }
+
+    sayHello();
+
+
+    *   Prototype object is shared among all the object 
+        create created using new
