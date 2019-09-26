@@ -98,6 +98,7 @@
         slideShowContainer.addEventListener('mouseleave', resume);
 
         function pause() {
+            clearInterval (myTimer);
             document.getElementsByClassName("mySlides");
             console.log("pause");
         }
