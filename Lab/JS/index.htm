@@ -39,37 +39,63 @@
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
+
     <script>
         var slideIndex = 1;
+        var count = 0;
 
         showSlides(slideIndex);
+        timer();
+
+        //Count time
+        function timer() {
+
+            if (count === 6000) {
+                console.log("stop");
+                count = 0;
+            } else {
+                myTime = setTimeout(function () {
+                    timer()
+                }, 1000);
+            }
+            console.log(count);
+            count += 1000;
+        }
+
 
         // transfer slide show
         function plusSlides(n) {
-            clearInterval(myTimer);
+            clearTimeout(myTimer);
             if (n < 0) {
                 showSlides(slideIndex -= 1);
             } else {
                 showSlides(slideIndex += 1);
             }
+
             // format time when click next or previous and when do not click
             if (n === -1) {
-                myTimer = setInterval(function () { plusSlides(n + 2) }, 2000);
+                myTimer = setTimeout(function () {
+                    plusSlides(n + 2);
+                    timer()
+                }, 5000);
             } else {
-                myTimer = setInterval(function () { plusSlides(n + 1) }, 2000);
+                myTimer = setTimeout(function () {
+                    plusSlides(n + 1);
+                    timer()
+                }, 5000);
             }
         }
 
         //Initialize show time
         window.addEventListener("load", function () {
             showSlides(slideIndex);
-            myTimer = setInterval(function () { plusSlides(1) }, 2000);
+            myTimer = setTimeout(function () { plusSlides(1); timer() }, 5000);
         })
 
         // Click dot
         function currentSlide(n) {
-            clearInterval(myTimer);
-            myTimer = setInterval(function () { plusSlides(n + 1) }, 2000);
+            clearTimeout(myTimer);
+            myTimer = setTimeout(function () { plusSlides(n + 1); timer() }, 5000);
             showSlides(slideIndex = n);
         }
 
@@ -84,13 +110,13 @@
             if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
-
             }
+
             if (slideIndex === 1) {
                 prev[0].style.display = "none";
                 next[0].style.display = "block";
-                
-            }else if(slideIndex === slides.length){
+
+            } else if (slideIndex === slides.length) {
                 next[0].style.display = "none";
                 prev[0].style.display = "block";
             }
@@ -98,7 +124,6 @@
                 next[0].style.display = "block";
                 prev[0].style.display = "block";
             }
-            console.log(slides.length);
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
@@ -112,16 +137,22 @@
         slideShowContainer.addEventListener('mouseleave', resume);
 
         function pause() {
-            clearInterval(myTimer);
+            clearTimeout(myTimer);
             document.getElementsByClassName("mySlides");
             console.log("pause");
         }
-
+        console.log(count);
         function resume() {
-            clearInterval(myTimer);
-            myTimer = setInterval(function () { plusSlides(slideIndex) }, 2000);
+            clearTimeout(myTimer);
+
+            if (count === 5000 || count === 1000) {
+                myTimer = setTimeout(function () { plusSlides(slideIndex); timer() }, 0);
+            } else {
+                myTimer = setTimeout(function () { plusSlides(slideIndex); timer() }, 5000 - count);
+            }
             console.log("chay ngay di");
         }
+
     </script>
 </body>
 
