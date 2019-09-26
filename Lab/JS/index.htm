@@ -86,10 +86,15 @@
                 slides[i].style.display = "none";
 
             }
-            if (slideIndex === 1 || slideIndex === slides.length) {
-                next[0].style.display = "none";
+            if (slideIndex === 1) {
                 prev[0].style.display = "none";
-            } else {
+                next[0].style.display = "block";
+                
+            }else if(slideIndex === slides.length){
+                next[0].style.display = "none";
+                prev[0].style.display = "block";
+            }
+            else {
                 next[0].style.display = "block";
                 prev[0].style.display = "block";
             }
