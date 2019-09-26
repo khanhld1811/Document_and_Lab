@@ -52,26 +52,24 @@
             } else {
                 showSlides(slideIndex += 1);
             }
-                console.log(n);
             // format time when click next or previous and when do not click
             if (n === -1) {
-                myTimer = setInterval(function () { plusSlides(n + 2) }, 5000);
+                myTimer = setInterval(function () { plusSlides(n + 2) }, 2000);
             } else {
-                myTimer = setInterval(function () { plusSlides(n + 1) }, 5000);
+                myTimer = setInterval(function () { plusSlides(n + 1) }, 2000);
             }
         }
 
         //Initialize show time
         window.addEventListener("load", function () {
-            console.log(slideIndex);
             showSlides(slideIndex);
-            myTimer = setInterval(function () { plusSlides(1) }, 5000);
+            myTimer = setInterval(function () { plusSlides(1) }, 2000);
         })
 
         // Click dot
         function currentSlide(n) {
             clearInterval(myTimer);
-            myTimer = setInterval(function () { plusSlides(n + 1) }, 5000);
+            myTimer = setInterval(function () { plusSlides(n + 1) }, 2000);
             showSlides(slideIndex = n);
         }
 
@@ -80,11 +78,22 @@
             var i;
             var slides = document.getElementsByClassName("mySlides");
             var dots = document.getElementsByClassName("dot");
+            var prev = document.getElementsByClassName("prev");
+            var next = document.getElementsByClassName("next");
             if (n > slides.length) { slideIndex = 1 }
             if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
+
             }
+            if (slideIndex === 1 || slideIndex === slides.length) {
+                next[0].style.display = "none";
+                prev[0].style.display = "none";
+            } else {
+                next[0].style.display = "block";
+                prev[0].style.display = "block";
+            }
+            console.log(slides.length);
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
@@ -98,14 +107,14 @@
         slideShowContainer.addEventListener('mouseleave', resume);
 
         function pause() {
-            clearInterval (myTimer);
+            clearInterval(myTimer);
             document.getElementsByClassName("mySlides");
             console.log("pause");
         }
 
         function resume() {
             clearInterval(myTimer);
-            myTimer = setInterval(function () { plusSlides(slideIndex) }, 5000);
+            myTimer = setInterval(function () { plusSlides(slideIndex) }, 2000);
             console.log("chay ngay di");
         }
     </script>
