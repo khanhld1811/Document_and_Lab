@@ -1,0 +1,8 @@
+if...else
+syntax
+
+if(condition){
+    statement when true;
+}else{
+    statement when flase
+}
