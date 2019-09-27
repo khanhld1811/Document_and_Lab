@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -43,13 +44,10 @@
     <script>
         var slideIndex = 1;
         var count = 0;
-
         showSlides(slideIndex);
         timer();
-
         //Count time
         function timer() {
-
             if (count === 6000) {
                 console.log("stop");
                 count = 0;
@@ -61,8 +59,6 @@
             console.log(count);
             count += 1000;
         }
-
-
         // transfer slide show
         function plusSlides(n) {
             clearTimeout(myTimer);
@@ -71,7 +67,6 @@
             } else {
                 showSlides(slideIndex += 1);
             }
-
             // format time when click next or previous and when do not click
             if (n === -1) {
                 myTimer = setTimeout(function () {
@@ -85,20 +80,17 @@
                 }, 5000);
             }
         }
-
         //Initialize show time
         window.addEventListener("load", function () {
             showSlides(slideIndex);
             myTimer = setTimeout(function () { plusSlides(1); timer() }, 5000);
         })
-
         // Click dot
         function currentSlide(n) {
             clearTimeout(myTimer);
             myTimer = setTimeout(function () { plusSlides(n + 1); timer() }, 5000);
             showSlides(slideIndex = n);
         }
-
         // Slide move
         function showSlides(n) {
             var i;
@@ -111,11 +103,9 @@
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-
             if (slideIndex === 1) {
                 prev[0].style.display = "none";
                 next[0].style.display = "block";
-
             } else if (slideIndex === slides.length) {
                 next[0].style.display = "none";
                 prev[0].style.display = "block";
@@ -130,12 +120,10 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-
         // listen for mouse events
         var slideShowContainer = document.getElementsByClassName('slideshow-container')[0];
         slideShowContainer.addEventListener('mouseenter', pause);
         slideShowContainer.addEventListener('mouseleave', resume);
-
         function pause() {
             clearTimeout(myTimer);
             document.getElementsByClassName("mySlides");
@@ -144,7 +132,6 @@
         console.log(count);
         function resume() {
             clearTimeout(myTimer);
-
             if (count === 5000 || count === 1000) {
                 myTimer = setTimeout(function () { plusSlides(slideIndex); timer() }, 0);
             } else {
@@ -152,7 +139,6 @@
             }
             console.log("chay ngay di");
         }
-
     </script>
 </body>
 

@@ -1,0 +1,50 @@
+ul, #bestUL{
+    list-style-type: none;
+}
+
+#bestUL{
+    margin:0;
+    padding:0;
+}
+
+.caret{
+    cursor:pointer;
+    user-select: none;
+}
+
+.caret::before{
+    content:"\25B6";
+    color:black;
+    display: inline-block;
+    font-size: 10px;
+
+}
+
+.caret-down::before{
+    transform:rotate(90deg);
+}
+
+
+button{
+    background-color:#6dc457;
+    border:1px;
+    border-radius: 3px;
+    color:white;
+    padding:7px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input{
+    border-radius: 3px;
+    border:1px solid #DDD;
+    padding:5px;   
+}
+
+.nested{
+    display:none;
+}
+
+.active{
+    display:block;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree view</title>
+    <link rel="stylesheet" href="./style.css">
+    <script href="./script.js"></script>
+</head>
+
+<body>
+    <ul class="myUL">
+        <!-- HTML -->
+        <li><label class="caret"></label><input class="myCheck" type="checkbox" value="HTML">HTML
+            <ul class="nested">
+                <li><input type="checkbox" class="myCheck" value="HTML table">HTML table</li>
+                <li><input type="checkbox" class="myCheck" value="HTML table">HTML links</li>
+            </ul>
+        </li>
+
+        <li><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP">PHP
+            <ul class="nested">
+                <li><input type="checkbox" class="myCheck" value="PHP if..else">PHP if..else</li>
+                <li><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP loop">PHP loop
+                    <ul class="nested">
+                        <li><input type="checkbox" class="myCheck" value="For loop">For loop</li>
+                        <li><input type="checkbox" class="myCheck" value="While loop">While loop</li>
+                        <li><input type="checkbox" class="myCheck" value="Do While loop">Do While loop</li>
+                    </ul>
+                </li>
+                <li><input type="checkbox" class="myCheck" value="PHP arrays">PHP arrays</li>
+            </ul>
+        </li>
+        <li><label class="caret"></label><input type="checkbox" class="myCheck" value="JQuery">JQuery</li>
+    </ul>
+    <br>
+    <button onclick="getValue()">Get values</button>
+    <input id="box" type="text">
+    <script>
+
+        var toggler = document.getElementsByClassName("caret");
+        var box = document.getElementById("box");
+        var i;
+
+        //Browse the whole card in caret and listen for the click event
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");// true -> show menu, false hidden meny
+                this.classList.toggle("caret-down");// true -> change icon, false reformat the icon
+                console.log(toggler[1].parentElement.querySelector(".nested"));
+            });
+        }
+
+        // create array contains the selected value
+        var arrCheck = [];
+
+        function getValue() {
+            var check = document.getElementsByClassName("myCheck");
+            for (var i = 0; i < check.length; i++) {
+                // checkbox is true save all in array
+                if (check[i].checked === true) {
+                    arrCheck[i] = check[i].value;
+
+                } else {
+                    // checkbox is false delete all data before
+                    delete arrCheck[i];
+                }
+            }
+
+            // clear undefined
+            Array.prototype.clean = function (deleteValue) {
+                console.log("+" + this.length)
+                for (var i = 0; i < this.length; i++) {
+                    // array have value undefined -> delete
+                    if (this[i] == deleteValue) {
+                        this.splice(i, 1);
+                        i--;
+                    }
+                }
+                return this;
+            };
+            arrCheck.clean(undefined);
+
+            //read array and push array in box
+            readArr();
+            document.getElementById("box").value = arrCheck;
+        }
+
+        //Access all data in array
+        function readArr() {
+            for (var i = 0; i < arrCheck.length; i++) {
+                stringArr += arrCheck[i] + ",";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

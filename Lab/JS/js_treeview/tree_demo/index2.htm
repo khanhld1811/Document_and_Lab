@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree view</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+<body>
+    <ul id="myUL">
+        <li><span class="caret">Beverages</span>
+          <ul class="nested">
+            <li>Water</li>
+            <li>Coffee</li>
+            <li><span class="caret">Tea</span>
+              <ul class="nested">
+                <li>Black Tea</li>
+                <li>White Tea</li>
+                <li><span class="caret">Green Tea</span>
+                  <ul class="nested">
+                    <li>Sencha</li>
+                    <li>Gyokuro</li>
+                    <li>Matcha</li>
+                    <li>Pi Lo Chun</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>  
+          </ul>
+        </li>
+      </ul>
+
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+        var listItems = document.querySelectorAll("ul");
+        var a = listItems.forEach(function(item){
+          console.log(item);
+        });
+       console.log(toggler[0].getAttribute("value"))
+        for(i = 0; i < toggler.length;i++){
+            toggler[i].addEventListener("click",function(){
+                /*console.log(toggler[1]);*/
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+                console.log(toggler[0].parentElement.querySelector(".nested"));
+                console.log(document.get)
+            });
+        }
+    </script>
+</body>
+</html>
