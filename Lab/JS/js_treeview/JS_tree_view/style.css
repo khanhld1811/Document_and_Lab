@@ -20,6 +20,10 @@ ul, #bestUL{
 
 }
 
+.caret-none::before{
+    padding-left:10px;
+}
+
 .caret-down::before{
     transform:rotate(90deg);
 }
@@ -47,4 +51,8 @@ input{
 
 .active{
     display:block;
+}
+
+.myCheck:checked{
+    
 }

@@ -13,56 +13,111 @@
 <body>
     <ul class="myUL">
         <!-- HTML -->
-        <li><label class="caret"></label><input class="myCheck" type="checkbox" value="HTML">HTML
+        <li class="menuMain"><label class="caret"></label><input class="myCheck" type="checkbox" value="HTML"
+                onclick="checkBox()">HTML
             <ul class="nested">
-                <li><input type="checkbox" class="myCheck" value="HTML table">HTML table</li>
-                <li><input type="checkbox" class="myCheck" value="HTML table">HTML links</li>
+                <li><input type="checkbox" class="myCheck" value="HTML table" onclick="checkBox()">HTML table</li>
+                <li><input type="checkbox" class="myCheck" value="HTML links" onclick="checkBox()">HTML links</li>
             </ul>
         </li>
-
-        <li><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP">PHP
+        <!-- PHP -->
+        <li class="menuMain"><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP"
+                onclick="checkBox()">PHP
             <ul class="nested">
-                <li><input type="checkbox" class="myCheck" value="PHP if..else">PHP if..else</li>
-                <li><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP loop">PHP loop
+                <li><input type="checkbox" class="myCheck" value="PHP if..else" onclick="checkBox()">PHP if..else</li>
+                <!-- PHP loop -->
+                <li class="menuMain"><label class="caret"></label><input type="checkbox" class="myCheck"
+                        value="PHP loop" onclick="checkBox()">PHP loop
                     <ul class="nested">
-                        <li><input type="checkbox" class="myCheck" value="For loop">For loop</li>
-                        <li><input type="checkbox" class="myCheck" value="While loop">While loop</li>
-                        <li><input type="checkbox" class="myCheck" value="Do While loop">Do While loop</li>
+                        <li><input type="checkbox" class="myCheck" value="For loop" onclick="checkBox()">For loop</li>
+                        <li><input type="checkbox" class="myCheck" value="While loop" onclick="checkBox()">While loop
+                        </li>
+                        <li><input type="checkbox" class="myCheck" value="Do While loop" onclick="checkBox()">Do While
+                            loop</li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="myCheck" value="PHP arrays">PHP arrays</li>
+                <li><input type="checkbox" class="myCheck" value="PHP arrays" onclick="checkBox()">PHP arrays</li>
             </ul>
         </li>
-        <li><label class="caret"></label><input type="checkbox" class="myCheck" value="JQuery">JQuery</li>
+        <!-- JQuery -->
+        <li><label class="caret-none"></label><input type="checkbox" class="myCheck" value="JQuery"
+                onclick="checkBox()">JQuery</li>
     </ul>
     <br>
+
     <button onclick="getValue()">Get values</button>
     <input id="box" type="text">
-    <script>
 
+    <script>
         var toggler = document.getElementsByClassName("caret");
+        var menuMain = document.getElementsByClassName("menuMain");
         var box = document.getElementById("box");
-        var i;
+
+        var checkAll = document.getElementsByClassName("myCheck");
+        var nested = document.getElementsByClassName("nested");
+
+        var itemMain1 = menuMain[0].getElementsByClassName("myCheck");// li content menu HTML
+        var itemMain2 = menuMain[1].getElementsByClassName("myCheck");// li content menu PHP
+        var itemMain3 = menuMain[2].getElementsByClassName("myCheck");// li content menu PHP loop
+
+        var n1 = nested[0].getElementsByClassName("myCheck");// li content child menu HTML
+        var n2 = nested[1].getElementsByClassName("myCheck");// li content child menu PHP
+        var n3 = nested[2].getElementsByClassName("myCheck");// li content child PHP loop
+
+        //Check selected 
+        function checkBox() {
+            /*
+            * menu 1: HTML
+            * true  -> have choose menu child
+            * false -> don't choose menu child
+            */
+            if (itemMain1[0].checked === false) {
+                for (var i = 0; i < n1.length; i++) {
+                    n1[i].checked = false;
+                }
+            }
+
+            /*
+            * menu 1: PHP
+            * true  -> have choose menu child
+            * false -> don't choose menu child
+            */
+            if (itemMain2[0].checked === false) {
+                console.log('item : ' + n2.length);
+                for (var i = 0; i < n2.length; i++) {
+                    console.log(i);
+                    n2[i].checked = false;
+                }
+            }
+            /*
+            *  menu 3: PHP loop
+            * true  -> have choose menu child
+            * false -> don't choose menu child
+            */
+            if (itemMain3[0].checked === false) {
+                for (var i = 0; i < n3.length; i++) {
+                    n3[i].checked = false;
+                }
+            }
+        }
 
         //Browse the whole card in caret and listen for the click event
-        for (i = 0; i < toggler.length; i++) {
+        for (var i = 0; i < toggler.length; i++) {
             toggler[i].addEventListener("click", function () {
                 this.parentElement.querySelector(".nested").classList.toggle("active");// true -> show menu, false hidden meny
                 this.classList.toggle("caret-down");// true -> change icon, false reformat the icon
-                console.log(toggler[1].parentElement.querySelector(".nested"));
+
             });
         }
 
         // create array contains the selected value
         var arrCheck = [];
-
         function getValue() {
             var check = document.getElementsByClassName("myCheck");
             for (var i = 0; i < check.length; i++) {
                 // checkbox is true save all in array
                 if (check[i].checked === true) {
                     arrCheck[i] = check[i].value;
-
                 } else {
                     // checkbox is false delete all data before
                     delete arrCheck[i];
@@ -84,8 +139,6 @@
             arrCheck.clean(undefined);
             document.getElementById("box").value = arrCheck;
         }
-
-     
     </script>
 </body>
 
