@@ -51,7 +51,6 @@
     <script>
         var toggler = document.getElementsByClassName("caret");
         var menuMain = document.getElementsByClassName("menuMain");
-        var box = document.getElementById("box");
 
         var checkAll = document.getElementsByClassName("myCheck");
         var nested = document.getElementsByClassName("nested");
@@ -106,7 +105,6 @@
             toggler[i].addEventListener("click", function () {
                 this.parentElement.querySelector(".nested").classList.toggle("active");// true -> show menu, false hidden meny
                 this.classList.toggle("caret-down");// true -> change icon, false reformat the icon
-
             });
         }
 
