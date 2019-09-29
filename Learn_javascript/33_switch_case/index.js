@@ -47,4 +47,8 @@ function goOrNotInVietNam(lightValue){
 
 goOrNotInVietNam(trafficLight);
 
+//1. List student
+//2. Create a new student
+//3. Save & exit
+// realine-sync
 
