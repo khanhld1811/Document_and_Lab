@@ -1,0 +1,11 @@
+if ... else if ... else
+//Syntax;
+if(condition){
+    statement1;
+}else if (codition2){
+    statement2;
+} else{
+    statement3;
+}
+
+
