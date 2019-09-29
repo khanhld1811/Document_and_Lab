@@ -1,0 +1,12 @@
+while, do ... while loops
+
+Syntax
+
+while (codition) {
+    // do something
+}
+
+// Syntax
+do{
+    //do something
+} white(condition)
