@@ -66,7 +66,6 @@
         function checkBox1(){
             // checkbox = true -> all child checkbox = false  
             if(itemMain1[0].checked === false){
-                console.log('false');
                 for(var i = 0; i < n1.length;i++){
                     n1[i].checked = false;
                 }
@@ -80,9 +79,9 @@
         function checkBox2(){
             // checkbox = true -> all child checkbox = false
             if(itemMain2[0].checked === false){
-                console.log('false');
                 for(var i = 0; i < n2.length;i++){
                     n2[i].checked = false;
+                    
                 }
             }else{// checkbox = false -> all child checkbox = true
                 for(var i = 0; i < n2.length;i++){
@@ -94,13 +93,14 @@
         function checkBox3(){
             // checkbox = true -> all child checkbox = false
             if(itemMain3[0].checked === false){
-                console.log('false');
                 for(var i = 0; i < n3.length;i++){
                     n3[i].checked = false;
                 }
+               itemMain2[0].checked = false;
             }else{// checkbox = false -> all child checkbox = true
                 for(var i = 0; i < n3.length;i++){
                     n3[i].checked = true;
+                    itemMain2[0].checked = true;
                 }
             }
         }
@@ -113,9 +113,13 @@
             * false -> don't choose menu child
             */
                 for (var i = 0; i < n1.length; i++) {
+                    var count = 0;
                     if(n1[i].checked === true){
                         itemMain1[0].checked = true;
-                    }  
+                        break;
+                    }else {
+                        itemMain1[0].checked = false;
+                    }
                 }
 
             /*
@@ -126,17 +130,37 @@
             for (var i = 0; i < n2.length; i++) {
                 if(n2[i].checked === true){
                     itemMain2[0].checked = true;
-                }  
+                    break;
+                }else{
+                    itemMain2[0].checked = false;
+                } 
             }
+
+
             /*
             *  menu 3: PHP loop
             * true  -> have choose menu child
             * false -> don't choose menu child
             */
             for (var i = 0; i < n3.length; i++) {
+                console.log(i);
                 if(n3[i].checked === true){
                     itemMain3[0].checked = true;
-                }  
+                    itemMain2[0].checked = true;
+                    console.log(n3[i].checked);
+                    break;
+                }  else {
+                    console.log(n3[i].checked);
+                    itemMain3[0].checked = false;
+                    for(var j = 0; j < n2.length; j++){
+                        if(n2[j].checked === true){
+                            itemMain2[0].checked = true;
+                            break;
+                        }else{
+                            itemMain2[0].checked = false;
+                        }
+                    }                            
+                }
             }
         }
 
