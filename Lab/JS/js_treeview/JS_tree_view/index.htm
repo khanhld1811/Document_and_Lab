@@ -14,7 +14,7 @@
     <ul class="myUL">
         <!-- HTML -->
         <li class="menuMain"><label class="caret"></label><input class="myCheck" type="checkbox" value="HTML"
-                onclick="checkBox()">HTML
+                onclick="checkBox1()">HTML
             <ul class="nested">
                 <li><input type="checkbox" class="myCheck" value="HTML table" onclick="checkBox()">HTML table</li>
                 <li><input type="checkbox" class="myCheck" value="HTML links" onclick="checkBox()">HTML links</li>
@@ -22,12 +22,12 @@
         </li>
         <!-- PHP -->
         <li class="menuMain"><label class="caret"></label><input type="checkbox" class="myCheck" value="PHP"
-                onclick="checkBox()">PHP
+                onclick="checkBox2()">PHP
             <ul class="nested">
                 <li><input type="checkbox" class="myCheck" value="PHP if..else" onclick="checkBox()">PHP if..else</li>
                 <!-- PHP loop -->
                 <li class="menuMain"><label class="caret"></label><input type="checkbox" class="myCheck"
-                        value="PHP loop" onclick="checkBox()">PHP loop
+                        value="PHP loop" onclick="checkBox3()">PHP loop
                     <ul class="nested">
                         <li><input type="checkbox" class="myCheck" value="For loop" onclick="checkBox()">For loop</li>
                         <li><input type="checkbox" class="myCheck" value="While loop" onclick="checkBox()">While loop
@@ -41,7 +41,7 @@
         </li>
         <!-- JQuery -->
         <li><label class="caret-none"></label><input type="checkbox" class="myCheck" value="JQuery"
-                onclick="checkBox()">JQuery</li>
+                onclick="checkBox4()">JQuery</li>
     </ul>
     <br>
 
@@ -63,6 +63,48 @@
         var n2 = nested[1].getElementsByClassName("myCheck");// li content child menu PHP
         var n3 = nested[2].getElementsByClassName("myCheck");// li content child PHP loop
 
+        function checkBox1(){
+            // checkbox = true -> all child checkbox = false  
+            if(itemMain1[0].checked === false){
+                console.log('false');
+                for(var i = 0; i < n1.length;i++){
+                    n1[i].checked = false;
+                }
+            }else{// checkbox = false -> all child checkbox = true
+                for(var i = 0; i < n1.length;i++){
+                    n1[i].checked = true;
+                }
+            }
+        }
+
+        function checkBox2(){
+            // checkbox = true -> all child checkbox = false
+            if(itemMain2[0].checked === false){
+                console.log('false');
+                for(var i = 0; i < n2.length;i++){
+                    n2[i].checked = false;
+                }
+            }else{// checkbox = false -> all child checkbox = true
+                for(var i = 0; i < n2.length;i++){
+                    n2[i].checked = true;
+                }
+            }
+        }
+
+        function checkBox3(){
+            // checkbox = true -> all child checkbox = false
+            if(itemMain3[0].checked === false){
+                console.log('false');
+                for(var i = 0; i < n3.length;i++){
+                    n3[i].checked = false;
+                }
+            }else{// checkbox = false -> all child checkbox = true
+                for(var i = 0; i < n3.length;i++){
+                    n3[i].checked = true;
+                }
+            }
+        }
+
         //Check selected 
         function checkBox() {
             /*
@@ -70,33 +112,31 @@
             * true  -> have choose menu child
             * false -> don't choose menu child
             */
-            if (itemMain1[0].checked === false) {
                 for (var i = 0; i < n1.length; i++) {
-                    n1[i].checked = false;
+                    if(n1[i].checked === true){
+                        itemMain1[0].checked = true;
+                    }  
                 }
-            }
 
             /*
             * menu 1: PHP
             * true  -> have choose menu child
             * false -> don't choose menu child
             */
-            if (itemMain2[0].checked === false) {
-                console.log('item : ' + n2.length);
-                for (var i = 0; i < n2.length; i++) {
-                    console.log(i);
-                    n2[i].checked = false;
-                }
+            for (var i = 0; i < n2.length; i++) {
+                if(n2[i].checked === true){
+                    itemMain2[0].checked = true;
+                }  
             }
             /*
             *  menu 3: PHP loop
             * true  -> have choose menu child
             * false -> don't choose menu child
             */
-            if (itemMain3[0].checked === false) {
-                for (var i = 0; i < n3.length; i++) {
-                    n3[i].checked = false;
-                }
+            for (var i = 0; i < n3.length; i++) {
+                if(n3[i].checked === true){
+                    itemMain3[0].checked = true;
+                }  
             }
         }
 
