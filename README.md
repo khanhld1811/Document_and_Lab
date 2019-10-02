@@ -1,4 +1,4 @@
-# HTML_CSS
+# WEB
 **The know ledge learned**
 * HTML
 * CSS
@@ -6,6 +6,4 @@
 * Git
 * Agile
 * SQL
-* Java
-* Android
  
