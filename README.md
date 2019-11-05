@@ -5,5 +5,5 @@
 * JS
 * Git
 * Agile
-* SQL
+* NodeJS
  
