@@ -1,0 +1,16 @@
+
+__filename
+    + Tên tập tin của mã được thực thi
+
+__dỉname
+    + Tên thư mục chứa tập tin đó.
+
+setTimeout(cb, ms)
+    + Độ trễ thời gian thực hiện hạnh động
+
+ClearTimeout(t)
+    + dừng bộ hẹn giờ được tạo bởi setTimeout()
+    + t là bộ định thời gian được trả về bởi hàm setTimeout().
+
+setInterval(cb, ms)
+    + Gọi lại sau một khoảng thời gian

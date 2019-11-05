@@ -1,0 +1,23 @@
+- Version
+    $ npm --version
+- Update version
+    $ sudo npm install npm -get_digit
+
+
+Installing module
+    $ npm install <Module Name>
+
+Uninstalling module
+    $ npm uninstall <Module Name>
+
+Update Module
+    $ npm update <Module Name>
+
+Search Module
+    $ npm serach <Module Name>
+
+Create Module
+    $ npm init
+    $ npm adduser
+    $ npm publish
+

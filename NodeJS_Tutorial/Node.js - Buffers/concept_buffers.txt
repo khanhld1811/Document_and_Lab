@@ -1,0 +1,25 @@
+1. PP1
+    var buf = new Buffer(int);
+2.PP2
+    var buf = new Buffer([10,20,30,40,50]);
+3.PP3
+    var buf = new Buffer("Simply Easy Learning","utf-8");
+
+Writing to Buffers 
+    buf.write(string[, offset][, length][, encoding])
+
+        + string : chuỗi được ghi vào bộ đệm
+        + ofset  : Chỉ mục của bộ đệm bắt đầu viết tại. Giá trị mặc định là 0.
+        + length : Số byte cần ghi. Mặc định cho buffer.lenght.
+        + encoding: Mã hóa để sử dụng. 'utf-8' là mã hóa mặc định
+
+Reading to Buffers
+    buf.toString([encoding][, start][, end])
+
+        + encoding : Mã hóa để sử dụng . 'utf-8' mặc định
+        + start    : Chỉ mục bắt đầu để đọc, mặc định là 0
+        + end      : Kết thúc chỉ mục để kết thúc đọc, mặc định là bộ đệm hoàn chỉnh. 
+
+        
+
+    

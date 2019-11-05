@@ -1,0 +1,69 @@
+fs.open(path, flags,[, mode], callback)
+
+    + path      - Chuỗi có tên tệp bao gồm đường dẫn
+    + flags     - Cho biết hành vi của tệp được mở
+    + mode      - Đặt chế độ tệp, chỉ khi tệp được tạo. Có thể đọc ghi
+    + callback  - Hàm gọi lại có 2 đối số (err, fd)fs.open
+
+Get file information
+
+    fs.stat(path, callback)
+    + path      -  Đây là chuỗi có tên tệp bao gồm đường dẫn
+    + callback  -  Đây là hàm gọi lại có 2 đối số(err, stats) 
+
+Writing a File
+
+    fs.writeFile(filename, data[, options], callback)
+    + path      : Chuỗi có tên tệp bao gồm đường dẫn 
+    + data      : Chuỗi hoặc bộ đệm được ghi vào tệp.
+    + options   : Đối tượng {mã hóa, chế độ, cờ}.
+    + callback  : Gọi lại có một lỗi tham số trả về khi có lỗi ghi
+
+Reading a File
+    fs.read(fd, buffer, offset, length, position, callback)
+    
+    + fd       : Mô tả tập tin được trả về bởi fs.open();
+    + buffer   : Bộ đệm dữ liệu ghi vào
+    + offset   : Phần bù trong bộ đệm để bắt đầu ghi lại
+    + length   : Số byte cần đọc
+    + position : Đây là một số nguyên chỉ định nơi bắt đầu đọc từ trong tệp
+    + callback : Đây là hàm gọi lại (err, byteRead, buffer).
+
+Closing a File 
+    fs.close(fd,callback);
+    + fd          : Đây là tệp được trả về bởi fs.open()fs.close
+    + callback    : Đây là chức năng gọi lại không có đối số
+
+Truncate a File 
+    fs.ftruncate(fd, len, callback);
+    + fd    - Mô tả tập tin được trả về bởi fs.open().
+    + len   - Đây là độ dài của tệp sau đó tệp sẽ bị cắt ngắn
+    + callback - Gọi lại không có đối số 
+
+Delete a File  
+    fs.unlink(path, callback);
+    
+    + path      : Đây là tên tệp bao gồm đường dẫn.
+    + callback  : Không có đối số
+Create a folder
+
+    fs.mkdir(path[, mode], callback)
+
+    + path : Tên thư mục bao gồm đường dẫn.
+    + mode : Quyền thư mục được đặt. Mặc định 0777
+    + callback : Đây là chức năng gọi lại không có đối số
+
+Reading a folder
+
+    fs.readdir(path, callback);
+
+    + path  : Tên thư mục, đường dẫn
+    + callback: Có 2 đối số (err, file) - file là mảng các tên tệp trong thư mục trừ '.' và '..'.
+
+Delete a folder
+
+    fs.rmdir(path, callback)
+
+    + path : Tên thư mục bao gồm đường dẫn
+    + callback: Không có đối số 
+    
