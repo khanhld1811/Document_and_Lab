@@ -1,4 +1,4 @@
-// Truyền data 1 luồng sang luồng khác
+// Piping the Streams
 var fs = require("fs");
 
 // Create a readable stream

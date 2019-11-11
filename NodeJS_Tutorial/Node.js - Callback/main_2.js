@@ -6,4 +6,6 @@ fs.readFile('input.txt', function(err, data){
 console.log(data.toString());
 });
 
-console.log("Program Ended");
+setTimeout(function(){
+    console.log("Program Ended");    
+},3000);

@@ -20,6 +20,13 @@ Reading to Buffers
         + start    : Chỉ mục bắt đầu để đọc, mặc định là 0
         + end      : Kết thúc chỉ mục để kết thúc đọc, mặc định là bộ đệm hoàn chỉnh. 
 
+buf.copy(targetBuffer[, targetStart][, sourceStart][, sourceEnd])
+
+    + targetBuffer  : Đối tượng bộ đệm nơi bộ đệm sẽ được sao chép.
+    + targetStart   : Số, Tùy chọn, Mặc định: 0
+    + sourceStart   : Số, Tùy chọn, Mặc định: 0
+    + sourceEnd     : Số, Tùy chọn, Mặc định: buffer.length
+
         
 
     

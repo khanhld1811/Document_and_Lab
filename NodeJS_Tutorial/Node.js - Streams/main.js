@@ -1,5 +1,5 @@
-// Đọc từ một dòng
-var fs = require("fs");
+// Reading from a Stream
+var fs = require("fs");//file system
 var data = '';
 
 // Create a readable stream
@@ -15,10 +15,12 @@ readerStream.on('data',function(chuck){
 
 readerStream.on('end',function(){
     console.log(data);
-})
+});
 
 readerStream.on('error', function(err){
     console.log(err.stack);
-})
+});
+
+
 
 console.log("Program Ended");

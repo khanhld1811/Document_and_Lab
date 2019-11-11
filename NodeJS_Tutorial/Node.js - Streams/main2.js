@@ -1,3 +1,4 @@
+//Writing to a Stream
 var fs = require('fs');
 var data = 'Simply Easy Learning';
 

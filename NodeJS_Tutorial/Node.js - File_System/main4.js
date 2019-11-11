@@ -1,4 +1,4 @@
-// Viết một tập tin
+//Writing a File
 var fs = require("fs");
 
 console.log("Going to write intot existing file");

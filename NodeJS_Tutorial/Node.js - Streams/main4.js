@@ -1,4 +1,4 @@
-// Xâu chuỗi
+// Chaining the Streams
 var fs = require("fs");
 var zlib = require('zlib');
 

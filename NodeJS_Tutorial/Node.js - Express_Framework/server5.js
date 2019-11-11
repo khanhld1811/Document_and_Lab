@@ -1,46 +1,23 @@
 var express = require('express');
-var app = express();
-var fs = require("fs");
-var upload =multer({dest:'./uploads'});
+const app = express();
 
-var bodyParser = require('body-parser');
 var multer = require('multer');
+var upload = multer({dest: 'uploads/'});
+const port = 3000;
 
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.set(multer({dest: "./public/upload/temp"}));
- console.log(__dirname);
+app.get('/',(req, res)=>{
+   res.send('hello men');
+});
 
-app.get('/index2.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index2.htm" );
-})
+app.post('/single',upload.single('profile'), (req, res) => {
+   try{
+      res.send(req.file);
+   }
+   catch(err){
+      res.send(400);
+   }
+});
 
-app.post('/file_upload', function (req, res) {
-   console.log(req.files.file.name);
-   console.log(req.files.file.path);
-   console.log(req.files.file.type);
-   var file = __dirname + "/" + req.files.file.name;
-   
-   fs.readFile( req.files.file.path, function (err, data) {
-      fs.writeFile(file, data, function (err) {
-         if( err ) {
-            console.log( err );
-            } else {
-               response = {
-                  message:'File uploaded successfully',
-                  filename:req.files.file.name
-               };
-            }
-         
-         console.log( response );
-         res.end( JSON.stringify( response ) );
-      });
-   });
-})
-
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
-   
-   console.log("Example app listening at http://%s:%s", host, port)
+app.listen(port, ()=>{
+   console.log('listening to the port: ' + port);
 })

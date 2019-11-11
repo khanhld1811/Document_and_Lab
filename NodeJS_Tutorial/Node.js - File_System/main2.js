@@ -1,3 +1,4 @@
+// Open a File
 var fs = require("fs");
 
 //Asynchronous - Opening File

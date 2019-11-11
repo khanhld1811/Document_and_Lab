@@ -1,4 +1,4 @@
-// Nhận thông tin tập tin
+// Get File Information
 var fs = require("fs");
 
 console.log("Going to get file info!");
