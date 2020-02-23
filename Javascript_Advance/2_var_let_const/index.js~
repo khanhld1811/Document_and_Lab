@@ -1,0 +1,13 @@
+// var let const
+// 1. declaration (khai bao bien)
+// 2. hoisting
+// 3. block scope (if, for, )
+// 4. redeclaration (khai bao lai)
+
+   	var a = 1;
+	let b = 2;
+	const c = 3;
+	console.log(a, b ,c);
+ 	
+	var a = 5;
+	console.log(a);
