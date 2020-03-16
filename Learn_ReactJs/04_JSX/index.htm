@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- <div class="title">React tutorials</div>
+    <img src="https://picsum.photos/200/300"/> -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // const Title = React.createElement('div', {
+        //     className: 'title'
+        // }, 'React tutorials');// JSX
+        const Title = <div className="title">React tutorials</div>
+        const Image = React.createElement('img', {
+            src:'https://picsum.photos/200/300'
+        });
+        const App = React.createElement('div', null, Title, Image);
+        const root = document.getElementById('root');
+        ReactDOM.render(App, root);
+    </script>
+</body>
+
+</html>
