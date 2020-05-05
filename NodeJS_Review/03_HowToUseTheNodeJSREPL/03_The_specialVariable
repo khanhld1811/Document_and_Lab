@@ -1,0 +1,15 @@
+var x = 0
+do {
+x++;
+console.log("x: " + x);
+} while ( x < 10 );
+var x = 10
+var y = 5
+x + y
+var sum
+console.log(sum)
+var sum = _
+console.log(sum)
+x + y
+var sum = _
+console.log(sum)
